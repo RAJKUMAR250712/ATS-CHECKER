@@ -61,7 +61,7 @@ const Card = () => {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:5000/analyze", {
+      const res = await fetch("https://ats-checker-backend-03es.onrender.com/analyze", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
