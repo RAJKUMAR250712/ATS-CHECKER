@@ -7,7 +7,11 @@ import axios from "axios";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://ats-checker-black.vercel.app",
+  })
+);
 app.use(express.json());
 
 // =========================
