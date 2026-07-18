@@ -3,9 +3,9 @@ import { useLocation } from "react-router-dom";
 
 import ScoreCard from "./ScoreCard";
 import WeakPointsCard from "./WeakPointsCard";
-import ImprovementsCard from "./ImprovementsCard";
+import ImprovementsCard from "./ImprovementsCard ";
 import MissingKeywordsCard from "./MissingKeywordsCard";
-import SuggestionsCard from "./SuggestionsCard";
+import SuggestionsCard from "./SuggestionsCard ";
 
 import { motion } from "framer-motion";
 
