@@ -5,8 +5,8 @@ import Card from "./Card";
 const Main = () => {
   return (
     <>
-      <div className=" h-screen w-full flex flex-1 flex-col md:flex-row items-center justify-center  p-20 ">
-        <div className="flex  h-full items-center justify-center gap-15  flex-col lg:flex-row">
+      <div className="min-h-screen w-full flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-20 py-10">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 w-full max-w-7xl">
           <Text />
           <Card />
         </div>
