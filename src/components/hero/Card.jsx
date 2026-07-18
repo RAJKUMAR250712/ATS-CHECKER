@@ -112,42 +112,41 @@ const Card = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-6">
+   <div className="flex flex-col items-center justify-center p-4 sm:p-6 w-full">
+  <div className="bg-white border rounded-lg shadow-md p-6 sm:p-8 w-full max-w-md text-center">
 
-      <div className="bg-white border rounded-lg shadow-md p-8 w-[400px] text-center">
+    <h1 className="text-xl sm:text-2xl font-bold mb-3">
+      Upload Your Resume
+    </h1>
 
-        <h1 className="text-2xl font-bold mb-3">
-          Upload Your Resume
-        </h1>
+    <p className="text-sm sm:text-base text-gray-600 mb-5">
+      AI ATS Checker
+    </p>
 
-        <p className="text-gray-600 mb-5">
-          AI ATS Checker
-        </p>
-
-        <div
-          onClick={handleClick}
-          className="bg-blue-600 text-white p-3 rounded-full flex items-center justify-center gap-2 cursor-pointer"
-        >
-          <AiOutlineCloudUpload />
-          <span>Upload PDF</span>
-        </div>
-
-        <input
-          type="file"
-          ref={fileRef}
-          onChange={handleChange}
-          className="hidden"
-          accept=".pdf"
-        />
-
-        {loading && (
-          <p className="mt-4 text-blue-600 font-semibold">
-            Analyzing Resume...
-          </p>
-        )}
-
-      </div>
+    <div
+      onClick={handleClick}
+      className="bg-blue-600 hover:bg-blue-700 transition text-white py-3 px-4 rounded-full flex items-center justify-center gap-2 cursor-pointer w-full"
+    >
+      <AiOutlineCloudUpload className="text-xl" />
+      <span className="font-medium">Upload PDF</span>
     </div>
+
+    <input
+      type="file"
+      ref={fileRef}
+      onChange={handleChange}
+      className="hidden"
+      accept=".pdf"
+    />
+
+    {loading && (
+      <p className="mt-4 text-blue-600 font-semibold">
+        Analyzing Resume...
+      </p>
+    )}
+
+  </div>
+</div>
   );
 };
 
