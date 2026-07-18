@@ -41,33 +41,85 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-     <div className="flex flex-col items-center w-full bg-white mb-6 py-4 rounded-xl">
-      <h1 className="text-2xl font-bold mb-6">
-        ATS Dashboard
-      </h1>
+  <motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.6 }}
+  className="p-4 sm:p-6 bg-gray-100 min-h-screen"
+>
+  {/* Dashboard Header */}
+  <motion.div
+    initial={{ y: -30, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.5 }}
+    className="flex flex-col items-center w-full bg-white mb-6 py-6 rounded-xl shadow-md"
+  >
+    <h1 className="text-2xl md:text-3xl font-bold text-gray-800">
+      ATS Dashboard
+    </h1>
 
-      {/* SCORE FIX */}
+    <div className="mt-4">
       <ScoreCard score={safeNumber(state.score)} />
-     </div>
-      
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-
-        {/* SUMMARY FIX */}
-        {/* <SummaryCard summary={safeString(state.summary)} /> */}
-
-        <WeakPointsCard data={safeArray(state.weak_points)} />
-
-        <ImprovementsCard data={safeArray(state.improvements)} />
-
-        <MissingKeywordsCard data={safeArray(state.missing_keywords)} />
-
-        <SuggestionsCard data={safeArray(state.suggestions)} />
-
-      </div>
-
     </div>
+  </motion.div>
+
+  {/* Dashboard Cards */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1 }}
+      whileHover={{
+        scale: 1.02,
+        transition: { duration: 0.2 }
+      }}
+    >
+      <WeakPointsCard data={safeArray(state.weak_points)} />
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+      whileHover={{
+        scale: 1.02,
+        transition: { duration: 0.2 }
+      }}
+    >
+      <ImprovementsCard data={safeArray(state.improvements)} />
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.3 }}
+      whileHover={{
+        scale: 1.02,
+        transition: { duration: 0.2 }
+      }}
+    >
+      <MissingKeywordsCard
+        data={safeArray(state.missing_keywords)}
+      />
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.4 }}
+      whileHover={{
+        scale: 1.02,
+        transition: { duration: 0.2 }
+      }}
+    >
+      <SuggestionsCard
+        data={safeArray(state.suggestions)}
+      />
+    </motion.div>
+
+  </div>
+</motion.div>
   );
 };
 
