@@ -9,6 +9,7 @@ import WeakPointsCard from "./WeakPointsCard";
 import ImprovementsCard from "./ImprovementsCard ";
 import MissingKeywordsCard from "./MissingKeywordsCard";
 import SuggestionsCard from "./SuggestionsCard ";
+import { motion } from "framer-motion";
 
 const Dashboard = () => {
   const { state } = useLocation();
